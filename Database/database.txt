@@ -1,68 +1,134 @@
-database/
-├── 📂 schema/          → ĐỊNH NGHĨA CẤU TRÚC DATABASE
-│   ├── 00_init_database.sql              → KHỞI TẠO DATABASE & THIẾT LẬP MÔI TRƯỜNG
-│   ├── 01_create_tables_users.sql        → BẢNG NGƯỜI DÙNG & PHÂN QUYỀN
-│   ├── 02_create_tables_doctors.sql      → BẢNG BÁC SĨ & CHUYÊN KHOA
-│   ├── 03_create_tables_patients.sql     → BẢNG BỆNH NHÂN & THÔNG TIN Y TẾ
-│   ├── 04_create_tables_appointments.sql → BẢNG LỊCH HẸN & TRẠNG THÁI
-│   ├── 05_create_tables_medical_records.sql → BẢNG HỒ SƠ BỆNH ÁN ĐIỆN TỬ
-│   ├── 06_create_tables_prescriptions.sql → BẢNG ĐƠN THUỐC & CHI TIẾT
-│   ├── 07_create_tables_medicines.sql    → BẢNG THUỐC & QUẢN LÝ KHO
-│   ├── 08_create_tables_rooms_beds.sql   → BẢNG PHÒNG & GIƯỜNG BỆNH
-│   ├── 09_create_tables_invoices_payments.sql → BẢNG HÓA ĐƠN & THANH TOÁN
-│   ├── 10_create_tables_reviews_feedback.sql → BẢNG ĐÁNH GIÁ & PHẢN HỒI
-│   ├── 11_create_tables_notifications.sql → BẢNG THÔNG BÁO HỆ THỐNG
-│   ├── 12_create_tables_system.sql       → BẢNG CẤU HÌNH & NHẬT KÝ
-│   ├── 13_create_indexes.sql             → TẠO INDEX TĂNG TỐC TRUY VẤN
-│   ├── 14_create_foreign_keys.sql        → RÀNG BUỘC KHÓA NGOẠI
-│   └── 15_create_triggers.sql            → TRIGGER CƠ BẢN
-├── 📂 seed_data/       → DỮ LIỆU MẪU KHỞI TẠO
-│   ├── 01_seed_roles.sql                 → VAI TRÒ HỆ THỐNG (Admin, Doctor, Patient...)
-│   ├── 02_seed_admin_user.sql            → TÀI KHOẢN QUẢN TRỊ VIÊN ĐẦU TIÊN
-│   ├── 03_seed_specializations.sql       → CHUYÊN KHOA (Tim mạch, Nội tiết, Nhi...)
-│   ├── 04_seed_departments.sql           → PHÒNG BAN (Cấp cứu, Nội trú, Ngoại trú...)
-│   ├── 05_seed_medicine_categories.sql   → DANH MỤC THUỐC (Kháng sinh, Giảm đau...)
-│   ├── 06_seed_test_types.sql            → LOẠI XÉT NGHIỆM (Máu, Nước tiểu, X-quang...)
-│   ├── 07_seed_appointment_statuses.sql  → TRẠNG THÁI LỊCH HẸN (Pending, Confirmed...)
-│   ├── 08_seed_services.sql              → DỊCH VỤ KHÁM CHỮA BỆNH
-│   ├── 09_seed_sample_doctors.sql        → DỮ LIỆU BÁC SĨ MẪU
-│   ├── 10_seed_sample_medicines.sql      → DỮ LIỆU THUỐC MẪU
-│   └── 11_seed_system_settings.sql       → CẤU HÌNH HỆ THỐNG MẶC ĐỊNH
-├── 📂 stored_procedures/ → THỦ TỤC LƯU TRỮ XỬ LÝ NGHIỆP VỤ
-│   ├── sp_calculate_invoice_total.sql    → TÍNH TỔNG HÓA ĐƠN TỰ ĐỘNG
-│   ├── sp_update_medicine_stock.sql      → CẬP NHẬT TỒN KHO THUỐC
-│   ├── sp_check_bed_availability.sql     → KIỂM TRA GIƯỜNG BỆNH TRỐNG
-│   ├── sp_generate_revenue_report.sql    → TẠO BÁO CÁO DOANH THU
-│   ├── sp_get_doctor_schedule.sql        → LẤY LỊCH LÀM VIỆC BÁC SĨ
-│   ├── sp_check_appointment_conflicts.sql → KIỂM TRA XUNG ĐỘT LỊCH HẸN
-│   ├── sp_get_patient_medical_history.sql → LẤY LỊCH SỬ BỆNH ÁN BỆNH NHÂN
-│   ├── sp_calculate_doctor_statistics.sql → THỐNG KÊ HIỆU SUẤT BÁC SĨ
-│   └── sp_cleanup_expired_data.sql       → DỌN DỮ LIỆU HẾT HẠN
-├── 📂 views/           → KHUNG NHÌNH DỮ LIỆU TỔNG HỢP
-│   ├── view_patient_full_info.sql        → THÔNG TIN ĐẦY ĐỦ BỆNH NHÂN
-│   ├── view_doctor_with_specialization.sql → BÁC SĨ KÈM CHUYÊN KHOA
-│   ├── view_today_appointments.sql       → LỊCH HẸN HÔM NAY
-│   ├── view_medicine_stock_status.sql    → TRẠNG THÁI TỒN KHO THUỐC
-│   ├── view_revenue_summary.sql          → TỔNG HỢP DOANH THU
-│   ├── view_bed_availability.sql         → TÌNH TRẠNG GIƯỜNG BỆNH
-│   ├── view_doctor_schedule_detail.sql   → CHI TIẾT LỊCH LÀM VIỆC
-│   ├── view_patient_financial_summary.sql → TỔNG QUAN TÀI CHÍNH BỆNH NHÂN
-│   └── view_medicine_expiry_alert.sql    → CẢNH BÁO THUỐC SẮP HẾT HẠN
-├── 📂 functions/       → HÀM TÙY CHỈNH TÍNH TOÁN
-│   ├── fn_calculate_age.sql              → TÍNH TUỔI TỪ NGÀY SINH
-│   ├── fn_get_available_beds_count.sql   → ĐẾM SỐ GIƯỜNG TRỐNG
-│   └── fn_check_medicine_expiry.sql      → KIỂM TRA THUỐC HẾT HẠN
-├── 📂 triggers/        → BỘ KÍCH HOẠT TỰ ĐỘNG
-│   ├── trg_update_bed_status_on_admission.sql → CẬP NHẬT TRẠNG THÁI GIƯỜNG KHI NHẬP VIỆN
-│   ├── trg_log_user_changes.sql          → GHI NHẬT KÝ THAY ĐỔI NGƯỜI DÙNG
-│   ├── trg_update_medicine_stock_on_dispense.sql → CẬP NHẬT KHO KHI PHÁT THUỐC
-│   ├── trg_send_notification_on_appointment.sql → GỬI THÔNG BÁO KHI ĐẶT LỊCH
-│   ├── trg_prevent_duplicate_appointments.sql → NGĂN ĐẶT LỊCH TRÙNG
-│   └── trg_update_medicine_expiry_status.sql → TỰ ĐỘNG CẬP NHẬT TRẠNG THÁI HẾT HẠN
-├── 📂 migrations/      → QUẢN LÝ PHIÊN BẢN DATABASE
-│   └── migration_log.md                  → LỊCH SỬ THAY ĐỔI SCHEMA
-├── 📂 backup/          → SAO LƯU & PHỤC HỒI DỮ LIỆU
-│   ├── backup_daily.sh                   → KỊCH BẢN SAO LƯU HÀNG NGÀY
-│   ├── backup_weekly.sh                  → KỊCH BẢN SAO LƯU HÀNG TUẦN
-│   └── restore_procedure.md              → HƯỚNG DẪN KHÔI PHỤC DỮ LIỆU
-└── 📄 README.md        → HƯỚNG DẪN SETUP & SỬ DỤNG
+HOSPITAL_MANAGEMENT/
+├── 📁 database/
+│   ├── 📁 01_schema/
+│   │   ├── 🗎 01_create_database.sql
+│   │   ├── 🗎 02_create_tables.sql
+│   │   ├── 🗎 03_alter_tables.sql
+│   │   └── 🗎 04_drop_tables.sql
+│   ├── 📁 02_constraints/
+│   │   ├── 🗎 01_primary_keys.sql
+│   │   ├── 🗎 02_foreign_keys.sql
+│   │   ├── 🗎 03_unique_constraints.sql
+│   │   ├── 🗎 04_check_constraints.sql
+│   │   └── 🗎 05_indexes.sql
+│   ├── 📁 03_data/
+│   │   ├── 🗎 01_insert_roles.sql
+│   │   ├── 🗎 02_insert_users.sql
+│   │   ├── 🗎 03_insert_departments.sql
+│   │   ├── 🗎 04_insert_medicines.sql
+│   │   ├── 🗎 05_insert_services.sql
+│   │   └── 🗎 06_sample_data.sql
+│   ├── 📁 04_stored_procedures/
+│   │   ├── 🗎 01_appointment_procedures.sql
+│   │   ├── 🗎 02_prescription_procedures.sql
+│   │   ├── 🗎 03_billing_procedures.sql
+│   │   └── 🗎 04_inventory_procedures.sql
+│   ├── 📁 05_triggers/
+│   │   ├── 🗎 01_audit_triggers.sql
+│   │   ├── 🗎 02_business_rules.sql
+│   │   └── 🗎 03_auto_calculations.sql
+│   ├── 📁 06_views/
+│   │   ├── 🗎 01_patient_views.sql
+│   │   ├── 🗎 02_doctor_views.sql
+│   │   ├── 🗎 03_admin_views.sql
+│   │   └── 🗎 04_report_views.sql
+│   ├── 📁 07_security/
+│   │   ├── 🗎 01_users_roles.sql
+│   │   ├── 🗎 02_permissions.sql
+│   │   └── 🗎 03_encryption.sql
+│   ├── 📁 08_migrations/
+│   │   ├── 🗎 01_initial_migration.sql
+│   │   ├── 🗎 02_add_features.sql
+│   │   └── 🗎 03_update_schema.sql
+│   └── 📁 09_backup_restore/
+│       ├── 🗎 01_backup_script.sql
+│       ├── 🗎 02_restore_script.sql
+│       └── 🗎 03_export_data.sql
+├── 📁 docs/
+│   ├── 🗎 ERD_Diagrams.md
+│   ├── 🗎 Database_Documentation.md
+│   └── 🗎 API_Documentation.md
+└── 🗎 deploy_database.bat
+
+----------------------------------------------
+GIẢI THÍCH
+📁01_schema/ - Định nghĩa cấu trúc database
+01_create_database.sql     → Tạo database, tables cơ bản
+02_create_tables.sql       → Tạo 90 bảng theo thiết kế
+03_alter_tables.sql        → Sửa cấu trúc bảng (nếu cần)
+04_drop_tables.sql         → Xóa tables (cleanup)
+
+==> Ý nghĩa: Xây dựng "khung xương" database trước
+
+📁 02_constraints/ - Ràng buộc toàn vẹn dữ liệu
+01_primary_keys.sql        → Khóa chính cho mỗi bảng
+02_foreign_keys.sql        → Khóa ngoại kết nối bảng
+03_unique_constraints.sql  → Đảm bảo giá trị duy nhất
+04_check_constraints.sql   → Ràng buộc nghiệp vụ
+05_indexes.sql             → Tăng tốc truy vấn
+
+==> Ý nghĩa: Đảm bảo data luôn chính xác, không trùng lặp
+
+📁 03_data/ - Dữ liệu mẫu để test
+
+01_insert_roles.sql        → Thêm roles (Admin, Doctor, Nurse...)
+02_insert_users.sql        → Tạo user mẫu
+03_insert_departments.sql  → Khoa (Nội, Ngoại, Cấp cứu...)
+04_insert_medicines.sql    → Danh mục thuốc
+05_insert_services.sql     → Dịch vụ y tế
+06_sample_data.sql         → Dữ liệu test đầy đủ
+
+==> Ý nghĩa: Có data để demo và testing
+
+📁 04_stored_procedures/ - Xử lý nghiệp vụ phức tạp
+
+01_appointment_procedures.sql  → Đặt lịch, hủy lịch
+02_prescription_procedures.sql → Kê đơn, phát thuốc
+03_billing_procedures.sql      → Tính tiền, tạo hóa đơn
+04_inventory_procedures.sql    → Nhập/xuất kho, cảnh báo
+
+==> Ý nghĩa: Đóng gói nghiệp vụ thành hàm gọi 1 lần
+
+📁 05_triggers/ - Tự động hóa nghiệp vụ
+
+01_audit_triggers.sql      → Tự động ghi log thay đổi
+02_business_rules.sql      → Tự động kiểm tra ràng buộc
+03_auto_calculations.sql   → Tự động tính toán
+
+==> Ví dụ: Khi thêm prescription_details → tự trừ tồn kho
+
+📁 06_views/ - Hiển thị data dễ dùng
+
+01_patient_views.sql       → Data cho bệnh nhân xem
+02_doctor_views.sql        → Data cho bác sĩ làm việc
+03_admin_views.sql         → Data cho quản trị
+04_report_views.sql        → Data để báo cáo
+
+==> Ý nghĩa: Che dấu độ phức tạp, cung cấp data "sạch"
+
+📁 07_security/ - Bảo mật database
+
+01_users_roles.sql         → Tạo user database
+02_permissions.sql         → Phân quyền truy cập
+03_encryption.sql          → Mã hóa data nhạy cảm
+
+==> Ý nghĩa: Bảo vệ data bệnh nhân, thuốc, tài chính
+
+
+📁 08_migrations/ - Cập nhật database
+
+01_initial_migration.sql   → Triển khai lần đầu
+02_add_features.sql        → Thêm tính năng mới
+03_update_schema.sql       → Sửa cấu trúc
+
+==> Ý nghĩa: Quản lý thay đổi database theo thời gian
+
+📁 09_backup_restore/ - Sao lưu & phục hồi
+
+01_backup_script.sql       → Tự động backup
+02_restore_script.sql      → Khôi phục khi có sự cố
+03_export_data.sql         → Xuất data báo cáo
+
+==> Ý nghĩa: Đảm bảo an toàn dữ liệu
+
+
