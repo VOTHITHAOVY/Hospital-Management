@@ -1,0 +1,82 @@
+BackEnd
+├── 📁 src/main/java/com/hospital/
+│   ├── 📁 config/
+│   │   ├── 🗎 DatabaseConfig.java
+│   │   ├── 🗎 SecurityConfig.java 
+│   │   ├── 🗎 JwtConfig.java
+│   │   └── 🗎 WebConfig.java
+│   ├── 📁 controller/
+│   │   ├── 🗎 AuthController.java
+│   │   ├── 🗎 UserController.java
+│   │   ├── 🗎 PatientController.java
+│   │   ├── 🗎 DoctorController.java
+│   │   ├── 🗎 AppointmentController.java
+│   │   ├── 🗎 MedicalRecordController.java
+│   │   ├── 🗎 PrescriptionController.java
+│   │   ├── 🗎 PharmacyController.java
+│   │   ├── 🗎 BillingController.java
+│   │   └── 🗎 ReportController.java
+│   ├── 📁 service/
+│   │   ├── 🗎 UserService.java
+│   │   ├── 🗎 AuthService.java
+│   │   ├── 🗎 PatientService.java
+│   │   ├── 🗎 AppointmentService.java
+│   │   ├── 🗎 MedicalRecordService.java
+│   │   ├── 🗎 PrescriptionService.java
+│   │   ├── 🗎 PharmacyService.java
+│   │   ├── 🗎 BillingService.java
+│   │   └── 🗎 ReportService.java
+│   ├── 📁 repository/
+│   │   ├── 🗎 UserRepository.java
+│   │   ├── 🗎 PatientRepository.java
+│   │   ├── 🗎 AppointmentRepository.java
+│   │   ├── 🗎 MedicalRecordRepository.java
+│   │   ├── 🗎 PrescriptionRepository.java
+│   │   ├── 🗎 MedicineRepository.java
+│   │   └── 🗎 InvoiceRepository.java
+│   ├── 📁 model/
+│   │   ├── 🗎 User.java
+│   │   ├── 🗎 Patient.java
+│   │   ├── 🗎 Appointment.java
+│   │   ├── 🗎 MedicalRecord.java
+│   │   ├── 🗎 Prescription.java
+│   │   ├── 🗎 Medicine.java
+│   │   └── 🗎 Invoice.java
+│   ├── 📁 dto/
+│   │   ├── 🗎 LoginRequest.java
+│   │   ├── 🗎 LoginResponse.java
+│   │   ├── 🗎 PatientDTO.java
+│   │   ├── 🗎 AppointmentDTO.java
+│   │   ├── 🗎 PrescriptionDTO.java
+│   │   └── 🗎 ApiResponse.java
+│   ├── 📁 security/
+│   │   ├── 🗎 JwtUtil.java
+│   │   ├── 🗎 CustomUserDetails.java
+│   │   ├── 🗎 CustomUserDetailsService.java
+│   │   └── 🗎 AuthEntryPointJwt.java
+│   └── 🗎 HospitalApplication.java
+├── 📁 src/main/resources/
+│   ├── 🗎 application.properties
+│   ├── 🗎 application-dev.properties
+│   ├── 🗎 application-prod.properties
+│   └── 🗎 data.sql
+├── 📁 src/test/java/com/hospital/
+│   ├── 📁 controller/
+│   │   ├── 🗎 AuthControllerTest.java
+│   │   ├── 🗎 PatientControllerTest.java
+│   │   └── 🗎 AppointmentControllerTest.java
+│   ├── 📁 service/
+│   │   ├── 🗎 UserServiceTest.java
+│   │   ├── 🗎 AuthServiceTest.java
+│   │   └── 🗎 PatientServiceTest.java
+│   └── 📁 repository/
+│       ├── 🗎 UserRepositoryTest.java
+│       └── 🗎 PatientRepositoryTest.java
+├── 📁 docs/
+│   ├── 🗎 api-documentation.md
+│   ├── 🗎 setup-guide.md
+│   └── 🗎 deployment-guide.md
+├── 🗎 pom.xml
+├── 🗎 Dockerfile
+├── 🗎 docker-compose.yml
+└── 🗎 README.md

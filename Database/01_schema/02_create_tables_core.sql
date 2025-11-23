@@ -1,0 +1,2 @@
+-- 15 b?ng CORE 
+CREATE TABLE roles (id INT PRIMARY KEY, name VARCHAR(50)); 

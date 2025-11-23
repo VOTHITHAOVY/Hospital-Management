@@ -1,330 +1,185 @@
-hospital-management-frontend/
-│
-├── public/
-│   ├── index.html
-│   ├── favicon.ico
-│   ├── logo.png
-│   ├── manifest.json
-│   └── robots.txt
-│
-├── src/
-│   │
-│   ├── api/
-│   │   ├── axiosConfig.js (axios instance với interceptors)
-│   │   ├── authApi.js
-│   │   ├── userApi.js
-│   │   ├── doctorApi.js
-│   │   ├── patientApi.js
-│   │   ├── appointmentApi.js
-│   │   ├── medicalRecordApi.js
-│   │   ├── prescriptionApi.js
-│   │   ├── medicineApi.js
-│   │   ├── roomApi.js
-│   │   ├── bedApi.js
-│   │   ├── admissionApi.js
-│   │   ├── invoiceApi.js
-│   │   ├── paymentApi.js
-│   │   ├── specializationApi.js
-│   │   ├── departmentApi.js
-│   │   ├── serviceApi.js
-│   │   ├── reviewApi.js
-│   │   ├── feedbackApi.js
-│   │   ├── notificationApi.js
-│   │   ├── reportApi.js
-│   │   ├── dashboardApi.js
-│   │   └── fileApi.js
-│   │
-│   ├── assets/
-│   │   ├── images/
-│   │   │   ├── logo.png
-│   │   │   ├── banner.jpg
-│   │   │   ├── default-avatar.png
-│   │   │   ├── default-doctor.png
-│   │   │   └── ... (các hình ảnh khác)
-│   │   │
-│   │   ├── icons/
-│   │   │   └── ... (custom icons nếu có)
-│   │   │
-│   │   └── fonts/
-│   │       └── ... (custom fonts nếu có)
-│   │
-│   ├── components/
-│   │   │
-│   │   ├── common/
-│   │   │   ├── Button/
-│   │   │   │   ├── Button.jsx
-│   │   │   │   ├── Button.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Input/
-│   │   │   │   ├── Input.jsx
-│   │   │   │   ├── Input.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Select/
-│   │   │   │   ├── Select.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── DatePicker/
-│   │   │   │   ├── DatePicker.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── TimePicker/
-│   │   │   │   ├── TimePicker.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Modal/
-│   │   │   │   ├── Modal.jsx
-│   │   │   │   ├── Modal.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Table/
-│   │   │   │   ├── Table.jsx
-│   │   │   │   ├── Table.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Card/
-│   │   │   │   ├── Card.jsx
-│   │   │   │   ├── Card.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Badge/
-│   │   │   │   ├── Badge.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Avatar/
-│   │   │   │   ├── Avatar.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── LoadingSpinner/
-│   │   │   │   ├── LoadingSpinner.jsx
-│   │   │   │   ├── LoadingSpinner.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Alert/
-│   │   │   │   ├── Alert.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Pagination/
-│   │   │   │   ├── Pagination.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── SearchBox/
-│   │   │   │   ├── SearchBox.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── FileUpload/
-│   │   │   │   ├── FileUpload.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── ConfirmDialog/
-│   │   │   │   ├── ConfirmDialog.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── EmptyState/
-│   │   │   │   ├── EmptyState.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Tabs/
-│   │   │   │   ├── Tabs.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Breadcrumb/
-│   │   │   │   ├── Breadcrumb.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   └── ErrorBoundary/
-│   │   │       ├── ErrorBoundary.jsx
-│   │   │       └── index.js
-│   │   │
-│   │   ├── layout/
-│   │   │   ├── Header/
-│   │   │   │   ├── Header.jsx
-│   │   │   │   ├── Header.module.css
-│   │   │   │   ├── UserMenu.jsx
-│   │   │   │   ├── NotificationDropdown.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Sidebar/
-│   │   │   │   ├── Sidebar.jsx
-│   │   │   │   ├── Sidebar.module.css
-│   │   │   │   ├── MenuItem.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Footer/
-│   │   │   │   ├── Footer.jsx
-│   │   │   │   ├── Footer.module.css
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── AdminLayout/
-│   │   │   │   ├── AdminLayout.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── DoctorLayout/
-│   │   │   │   ├── DoctorLayout.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── PatientLayout/
-│   │   │   │   ├── PatientLayout.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── PublicLayout/
-│   │   │   │   ├── PublicLayout.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   └── AuthLayout/
-│   │   │       ├── AuthLayout.jsx
-│   │   │       └── index.js
-│   │   │
-│   │   ├── forms/
-│   │   │   ├── FormInput.jsx
-│   │   │   ├── FormSelect.jsx
-│   │   │   ├── FormTextarea.jsx
-│   │   │   ├── FormCheckbox.jsx
-│   │   │   ├── FormRadio.jsx
-│   │   │   ├── FormDatePicker.jsx
-│   │   │   ├── FormTimePicker.jsx
-│   │   │   ├── FormFileUpload.jsx
-│   │   │   └── ValidationError.jsx
-│   │   │
-│   │   ├── charts/
-│   │   │   ├── LineChart.jsx
-│   │   │   ├── BarChart.jsx
-│   │   │   ├── PieChart.jsx
-│   │   │   ├── AreaChart.jsx
-│   │   │   └── DashboardChart.jsx
-│   │   │
-│   │   └── widgets/
-│   │       ├── StatCard.jsx
-│   │       ├── AppointmentCard.jsx
-│   │       ├── DoctorCard.jsx
-│   │       ├── PatientCard.jsx
-│   │       ├── NotificationItem.jsx
-│   │       └── ReviewCard.jsx
-│   │
-│   ├── pages/
-│   │   │
-│   │   ├── public/
-│   │   │   ├── Home/
-│   │   │   │   ├── HomePage.jsx
-│   │   │   │   ├── HeroSection.jsx
-│   │   │   │   ├── FeaturesSection.jsx
-│   │   │   │   ├── SpecializationsSection.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Auth/
-│   │   │   │   ├── LoginPage.jsx
-│   │   │   │   ├── RegisterPage.jsx
-│   │   │   │   ├── ForgotPasswordPage.jsx
-│   │   │   │   ├── ResetPasswordPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── About/
-│   │   │   │   ├── AboutPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Contact/
-│   │   │   │   ├── ContactPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Specializations/
-│   │   │   │   ├── SpecializationsPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Doctors/
-│   │   │   │   ├── DoctorsListPage.jsx
-│   │   │   │   ├── DoctorProfilePage.jsx
-│   │   │   │   ├── DoctorCard.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   └── NotFound/
-│   │   │       ├── NotFoundPage.jsx
-│   │   │       └── index.js
-│   │   │
-│   │   ├── admin/
-│   │   │   ├── Dashboard/
-│   │   │   │   ├── AdminDashboard.jsx
-│   │   │   │   ├── StatsCards.jsx
-│   │   │   │   ├── RevenueChart.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Users/
-│   │   │   │   ├── UserListPage.jsx
-│   │   │   │   ├── AddUserPage.jsx
-│   │   │   │   ├── EditUserPage.jsx
-│   │   │   │   ├── UserDetailPage.jsx
-│   │   │   │   ├── UserTable.jsx
-│   │   │   │   ├── UserForm.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Doctors/
-│   │   │   │   ├── DoctorListPage.jsx
-│   │   │   │   ├── AddDoctorPage.jsx
-│   │   │   │   ├── EditDoctorPage.jsx
-│   │   │   │   ├── DoctorDetailPage.jsx
-│   │   │   │   ├── DoctorSchedulePage.jsx
-│   │   │   │   ├── DoctorTable.jsx
-│   │   │   │   ├── DoctorForm.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Staff/
-│   │   │   │   ├── StaffListPage.jsx
-│   │   │   │   ├── AddStaffPage.jsx
-│   │   │   │   ├── EditStaffPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Specializations/
-│   │   │   │   ├── SpecializationListPage.jsx
-│   │   │   │   ├── SpecializationForm.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Departments/
-│   │   │   │   ├── DepartmentListPage.jsx
-│   │   │   │   ├── DepartmentForm.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Medicines/
-│   │   │   │   ├── MedicineListPage.jsx
-│   │   │   │   ├── AddMedicinePage.jsx
-│   │   │   │   ├── EditMedicinePage.jsx
-│   │   │   │   ├── MedicineDetailPage.jsx
-│   │   │   │   ├── StockManagementPage.jsx
-│   │   │   │   ├── ExpiryAlertPage.jsx
-│   │   │   │   ├── LowStockAlertPage.jsx
-│   │   │   │   ├── MedicineTable.jsx
-│   │   │   │   ├── MedicineForm.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Rooms/
-│   │   │   │   ├── RoomListPage.jsx
-│   │   │   │   ├── RoomForm.jsx
-│   │   │   │   ├── BedManagementPage.jsx
-│   │   │   │   ├── BedLayout.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Services/
-│   │   │   │   ├── ServiceListPage.jsx
-│   │   │   │   ├── ServiceForm.jsx
-│   │   │   │   ├── PackageManagementPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Suppliers/
-│   │   │   │   ├── SupplierListPage.jsx
-│   │   │   │   ├── SupplierForm.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   ├── Reports/
-│   │   │   │   ├── RevenueReportPage.jsx
-│   │   │   │   ├── PatientStatisticsPage.jsx
-│   │   │   │   ├── DoctorPerformancePage.jsx
-│   │   │   │   ├── MedicineStockReportPage.jsx
-│   │   │   │   ├── DepartmentReportPage.jsx
-│   │   │   │   └── index.js
-│   │   │   │
-│   │   │   └── Settings/
-│   │   │       ├── SystemSettingsPage.jsx
-│   │   │       ├── ActivityLogsPage.jsx
-│   │   │       └── index.js
-│   │   │
-│   │   ├── doctor/
-│   │   │   ├── Dashboard/
+FE_REACT/
+├── 📁 public/
+│   ├── 🗎 index.html
+│   ├── 🗎 favicon.ico
+│   ├── 🗎 manifest.json
+│   └── 🗎 robots.txt
+├── 📁 src/
+│   ├── 📁 assets/
+│   │   ├── 📁 images/
+│   │   │   ├── 🗎 logo.png
+│   │   │   ├── 🗎 hospital-bg.jpg
+│   │   │   ├── 🗎 default-avatar.png
+│   │   │   ├── 🗎 doctor-avatar.png
+│   │   │   └── 🗎 patient-avatar.png
+│   │   └── 📁 icons/
+│   │       ├── 🗎 dashboard.svg
+│   │       ├── 🗎 patients.svg
+│   │       ├── 🗎 doctors.svg
+│   │       ├── 🗎 appointments.svg
+│   │       ├── 🗎 pharmacy.svg
+│   │       └── 🗎 billing.svg
+│   ├── 📁 components/
+│   │   ├── 📁 common/
+│   │   │   ├── 🗎 Header.js
+│   │   │   ├── 🗎 Sidebar.js
+│   │   │   ├── 🗎 Footer.js
+│   │   │   ├── 🗎 LoadingSpinner.js
+│   │   │   ├── 🗎 SearchBar.js
+│   │   │   ├── 🗎 Pagination.js
+│   │   │   ├── 🗎 Modal.js
+│   │   │   ├── 🗎 DataTable.js
+│   │   │   ├── 🗎 Button.js
+│   │   │   ├── 🗎 Notification.js
+│   │   │   ├── 🗎 ProtectedRoute.js
+│   │   │   └── 🗎 ErrorBoundary.js
+│   │   ├── 📁 auth/
+│   │   │   ├── 🗎 LoginForm.js
+│   │   │   ├── 🗎 RegisterForm.js
+│   │   │   └── 🗎 ForgotPassword.js
+│   │   ├── 📁 forms/
+│   │   │   ├── 🗎 PatientForm.js
+│   │   │   ├── 🗎 DoctorForm.js
+│   │   │   ├── 🗎 AppointmentForm.js
+│   │   │   ├── 🗎 PrescriptionForm.js
+│   │   │   ├── 🗎 MedicalRecordForm.js
+│   │   │   ├── 🗎 InvoiceForm.js
+│   │   │   └── 🗎 MedicineForm.js
+│   │   ├── 📁 cards/
+│   │   │   ├── 🗎 PatientCard.js
+│   │   │   ├── 🗎 DoctorCard.js
+│   │   │   ├── 🗎 AppointmentCard.js
+│   │   │   ├── 🗎 MedicineCard.js
+│   │   │   ├── 🗎 StatsCard.js
+│   │   │   └── 🗎 InvoiceCard.js
+│   │   └── 📁 charts/
+│   │       ├── 🗎 RevenueChart.js
+│   │       ├── 🗎 PatientStatsChart.js
+│   │       └── 🗎 AppointmentChart.js
+│   ├── 📁 pages/
+│   │   ├── 📁 auth/
+│   │   │   ├── 🗎 Login.js
+│   │   │   ├── 🗎 Register.js
+│   │   │   └── 🗎 ForgotPassword.js
+│   │   ├── 📁 admin/
+│   │   │   ├── 🗎 Dashboard.js
+│   │   │   ├── 🗎 UserManagement.js
+│   │   │   ├── 🗎 SystemSettings.js
+│   │   │   └── 🗎 Reports.js
+│   │   ├── 📁 patient/
+│   │   │   ├── 🗎 PatientDashboard.js
+│   │   │   ├── 🗎 PatientList.js
+│   │   │   ├── 🗎 PatientProfile.js
+│   │   │   ├── 🗎 PatientHistory.js
+│   │   │   └── 🗎 AddPatient.js
+│   │   ├── 📁 doctor/
+│   │   │   ├── 🗎 DoctorDashboard.js
+│   │   │   ├── 🗎 DoctorList.js
+│   │   │   ├── 🗎 DoctorSchedule.js
+│   │   │   ├── 🗎 PatientQueue.js
+│   │   │   └── 🗎 MedicalRecords.js
+│   │   ├── 📁 appointment/
+│   │   │   ├── 🗎 AppointmentList.js
+│   │   │   ├── 🗎 AppointmentCalendar.js
+│   │   │   ├── 🗎 BookAppointment.js
+│   │   │   └── 🗎 AppointmentDetails.js
+│   │   ├── 📁 pharmacy/
+│   │   │   ├── 🗎 PharmacyDashboard.js
+│   │   │   ├── 🗎 MedicineInventory.js
+│   │   │   ├── 🗎 PrescriptionList.js
+│   │   │   ├── 🗎 AddMedicine.js
+│   │   │   └── 🗎 StockManagement.js
+│   │   ├── 📁 billing/
+│   │   │   ├── 🗎 BillingDashboard.js
+│   │   │   ├── 🗎 InvoiceList.js
+│   │   │   ├── 🗎 PaymentProcessing.js
+│   │   │   ├── 🗎 CreateInvoice.js
+│   │   │   └── 🗎 FinancialReports.js
+│   │   └── 📁 nurse/
+│   │       ├── 🗎 NurseDashboard.js
+│   │       ├── 🗎 PatientMonitoring.js
+│   │       └── 🗎 VitalSigns.js
+│   ├── 📁 contexts/
+│   │   ├── 🗎 AuthContext.js
+│   │   ├── 🗎 PatientContext.js
+│   │   ├── 🗎 DoctorContext.js
+│   │   ├── 🗎 AppointmentContext.js
+│   │   └── 🗎 NotificationContext.js
+│   ├── 📁 hooks/
+│   │   ├── 🗎 useAuth.js
+│   │   ├── 🗎 usePatients.js
+│   │   ├── 🗎 useDoctors.js
+│   │   ├── 🗎 useAppointments.js
+│   │   ├── 🗎 useMedicines.js
+│   │   ├── 🗎 useForm.js
+│   │   ├── 🗎 useLocalStorage.js
+│   │   ├── 🗎 usePagination.js
+│   │   └── 🗎 useSearch.js
+│   ├── 📁 services/
+│   │   ├── 🗎 api.js
+│   │   ├── 🗎 authService.js
+│   │   ├── 🗎 patientService.js
+│   │   ├── 🗎 doctorService.js
+│   │   ├── 🗎 appointmentService.js
+│   │   ├── 🗎 medicalService.js
+│   │   ├── 🗎 pharmacyService.js
+│   │   ├── 🗎 billingService.js
+│   │   ├── 🗎 uploadService.js
+│   │   └── 🗎 notificationService.js
+│   ├── 📁 utils/
+│   │   ├── 🗎 constants.js
+│   │   ├── 🗎 helpers.js
+│   │   ├── 🗎 validators.js
+│   │   ├── 🗎 formatters.js
+│   │   ├── 🗎 dateUtils.js
+│   │   ├── 🗎 fileUtils.js
+│   │   └── 🗎 permissions.js
+│   ├── 📁 store/
+│   │   ├── 🗎 index.js
+│   │   ├── 🗎 authSlice.js
+│   │   ├── 🗎 patientSlice.js
+│   │   ├── 🗎 doctorSlice.js
+│   │   ├── 🗎 appointmentSlice.js
+│   │   ├── 🗎 medicineSlice.js
+│   │   └── 🗎 uiSlice.js
+│   ├── 📁 routes/
+│   │   ├── 🗎 AppRoutes.js
+│   │   ├── 🗎 PrivateRoute.js
+│   │   ├── 🗎 PublicRoute.js
+│   │   └── 🗎 RoleBasedRoute.js
+│   ├── 📁 styles/
+│   │   ├── 🗎 globals.css
+│   │   ├── 🗎 components.css
+│   │   ├── 🗎 layouts.css
+│   │   ├── 🗎 auth.css
+│   │   ├── 🗎 dashboard.css
+│   │   └── 🗎 responsive.css
+│   ├── 🗎 App.js
+│   ├── 🗎 App.css
+│   ├── 🗎 index.js
+│   └── 🗎 index.css
+├── 📁 tests/
+│   ├── 📁 components/
+│   │   ├── 🗎 Header.test.js
+│   │   ├── 🗎 LoginForm.test.js
+│   │   └── 🗎 PatientCard.test.js
+│   ├── 📁 pages/
+│   │   ├── 🗎 Login.test.js
+│   │   ├── 🗎 Dashboard.test.js
+│   │   └── 🗎 PatientList.test.js
+│   ├── 📁 services/
+│   │   ├── 🗎 authService.test.js
+│   │   └── 🗎 patientService.test.js
+│   └── 📁 utils/
+│       ├── 🗎 validators.test.js
+│       └── 🗎 formatters.test.js
+├── 📁 docs/
+│   ├── 🗎 README.md
+│   ├── 🗎 API_DOCUMENTATION.md
+│   ├── 🗎 COMPONENT_GUIDE.md
+│   └── 🗎 DEPLOYMENT.md
+├── 🗎 package.json
+├── 🗎 vite.config.js
+├── 🗎 .env.example
+├── 🗎 .gitignore
+└── 🗎 .eslintrc.js

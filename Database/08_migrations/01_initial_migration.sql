@@ -1,1 +1,2 @@
- 
+-- Initial Migration 
+-- T?o t?t c? b?ng v… constraints 
